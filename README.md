@@ -100,16 +100,14 @@ $ docker run -p 8888:8888
 
 ... where `$PWD` is the current directory.
 
-Then you can open a browser at:
+A Jupiter Notebook instance will start, and you can open a browser at: 
 
 http://localhost:8888
 
-and interact with all the [modeling examples](https://github.com/Gurobi/modeling-examples).
+Then you can interact with all the [modeling examples](https://github.com/Gurobi/modeling-examples).
 
-
-A Jupiter Notebook instance will start.  As this is intended to run as a dev environment,
-by default all security (Token and Password) will be disabled.  If you want to implement security
-it can be defined in the `cmd` part of the command:
+As this is intended to run as a training environment, security checks (Token and Password) are disabled. 
+If you want to implement security checks, it can be defined in the `cmd` part of the command:
 
 `$ docker run -p 8888:8888 gurobi/modeling-examples --NotebookApp.token='token'`
 
@@ -144,18 +142,13 @@ services:
 
 Run `$ docker-compose up `
 
-Then you can open a browser at: 
+A Jupiter Notebook instance will start, and you can open a browser at: 
 
 http://localhost:8888 
 
-and interact with all the [modeling examples](https://github.com/Gurobi/modeling-examples).
+Then you can interact with all the [modeling examples](https://github.com/Gurobi/modeling-examples).
 
-
-A Jupiter Notebook instance will start.  As this is intended to run as a dev environment,
-by default all security (Token and Password) will be disabled.  If you want to implement security 
-it can be defined in the `cmd` part of the command:
-
-`$ docker run -p 8888:8888 gurobi/modeling-examples --NotebookApp.token='token'` 
+As this is intended to run as a training environment, security checks (Token and Password) are disabled.  
 
 # License
 
