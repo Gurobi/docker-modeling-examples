@@ -93,8 +93,8 @@ A quick guide to the appropriate API parameters and license file properties is a
 If you have a different valid `Gurobi Client` license file:
 
 ```console
-$ docker run -p 8888:8888 
-             --volume=$PWD/gurobi.lic:/opt/gurobi/gurobi.lic:ro 
+$ docker run -p 8888:8888 \
+             --volume=$PWD/gurobi.lic:/opt/gurobi/gurobi.lic:ro \
              gurobi/modeling-examples
 ```
 
