@@ -15,11 +15,11 @@ Supported architectures: linux amd64
 Published image artifact details: https://github.com/Gurobi/docker-modeling-examples
 
 Gurobi images:
-- [gurobi/optimizer](https://hub.docker.com/repository/docker/gurobi/optimizer): Gurobi Optimizer (full distribution)
-- [gurobi/python](https://hub.docker.com/repository/docker/gurobi/python): Gurobi Optimizer (Python API only)
-- [gurobi/modeling-examples](https://hub.docker.com/repository/docker/gurobi/modeling-examples): Optimization modeling examples (distributed as Jupyter Notebooks)
-- [gurobi/compute](https://hub.docker.com/repository/docker/gurobi/compute): Gurobi Compute Server
-- [gurobi/manager](https://hub.docker.com/repository/docker/gurobi/manager): Gurobi Cluster Manager
+- [gurobi/optimizer](https://hub.docker.com/r/gurobi/optimizer): Gurobi Optimizer (full distribution)
+- [gurobi/python](https://hub.docker.com/r/gurobi/python): Gurobi Optimizer (Python API only)
+- [gurobi/modeling-examples](https://hub.docker.com/r/gurobi/modeling-examples): Optimization modeling examples (distributed as Jupyter Notebooks)
+- [gurobi/compute](https://hub.docker.com/r/gurobi/compute): Gurobi Compute Server
+- [gurobi/manager](https://hub.docker.com/r/gurobi/manager): Gurobi Cluster Manager
 
 # What is `gurobi/modeling-examples`?
 The Gurobi Optimizer is the fastest and most powerful mathematical programming solver available 
