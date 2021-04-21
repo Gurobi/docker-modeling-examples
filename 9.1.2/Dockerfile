@@ -23,7 +23,7 @@ RUN python -m pip install \
         sklearn \
         folium \
         xlrd==1.2.0 \
-    && python -m pip install https://pypi.gurobi.com gurobipy==${GRB_VERSION} \
+    && python -m pip install gurobipy==${GRB_VERSION} \
     && mkdir -p /home/gurobi
 WORKDIR /home/gurobi
 COPY --from=buildexamples /home/gurobi .
