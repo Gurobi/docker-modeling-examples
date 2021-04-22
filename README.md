@@ -5,8 +5,12 @@ Maintained by: [Gurobi Optimization](https://www.gurobi.com)
 Where to get help: [Gurobi Support](https://www.gurobi.com/support/), [Gurobi Documentation](https://www.gurobi.com/documentation/)
 
 # Supported tags and respective Dockerfile links
-## Simple Tags
-* [9.1.1, latest](https://github.com/Gurobi/docker-modeling-examples/blob/master/9.1.1/Dockerfile)
+
+* [9.1.2, latest](https://github.com/Gurobi/docker-modeling-examples/blob/master/9.1.2/Dockerfile)
+* [9.1.1](https://github.com/Gurobi/docker-modeling-examples/blob/master/9.1.1/Dockerfile)
+
+When building a production application, we recommend using an explicit version number instead of the `latest` tag.
+This way, you are in control of the upgrade process of your application.
 
 # Quick reference (cont.)
 
@@ -72,32 +76,36 @@ connect to the compute server cluster, or the Gurobi Cloud, or the token server.
 you have the following options:
 * Mounting the client license file:
 You can store connection parameters in a client license file (typically called `gurobi.lic`) 
-and mount it to the container. This option provides a simple approach for testing.
+and mount it to the container. 
+This option provides a simple approach for testing with Docker.
+When using Kubernetes, the license file can be stored as a secret and mounted in the container.
 
 * Setting parameters with the API:
 When your application creates the [Gurobi environment](https://www.gurobi.com/documentation/current/refman/py_env.html) 
 in Python, you can specify connection parameters. The parameter values can come from 
 environment variables, a database or from other sources as required by your application. 
-This is the recommended approach for production applications.
 
 A quick guide to the appropriate API parameters and license file properties is available [here](https://github.com/Gurobi/docker-optimizer/blob/master/PARAMS.md).
 
 # How to use this image?
 
-## Start a `modeling-examples` server instance
-`$ docker run -p 8888:8888 gurobi/modeling-examples`
+## Using Docker
 
-... this will make use of the limited licenses installed by default.
+The following command starts a modelling example server instance with
+the limited licenses installed by default.
 
-If you have a different valid `Gurobi Client` license file:
+```
+$ docker run -p 8888:8888 gurobi/modeling-examples
+```
+
+If you have a different license file you can mount it from the current 
+directory `$PWD`
 
 ```console
 $ docker run -p 8888:8888 \
              --volume=$PWD/gurobi.lic:/opt/gurobi/gurobi.lic:ro \
              gurobi/modeling-examples
 ```
-
-... where `$PWD` is the current directory.
 
 A Jupiter Notebook instance will start, and you can open a browser at: 
 
@@ -110,9 +118,8 @@ If you want to implement security checks, it can be defined in the `cmd` part of
 
 `$ docker run -p 8888:8888 gurobi/modeling-examples --NotebookApp.token='token'`
 
+## Using Docker Compose
 
-
-## ... via docker stack deploy or docker-compose
 Example `docker-compose.yml` for a modeling example server:
 
 ```
@@ -149,7 +156,7 @@ Then you can interact with all the [modeling examples](https://github.com/Gurobi
 
 As this is intended to run as a training environment, security checks (Token and Password) are disabled.  
 
-## ... via Kubernetes deployment
+## Using Kubernetes
 
 If you want to mount a specific license with Kubernetes, it can be done using a secret. This 
 is optional for the modeling examples as a limited license will be used if not provided.
@@ -185,7 +192,6 @@ dependencies of the primary software being contained).
 As for any pre-built image usage, it is the image user's responsibility to ensure that any use
 of this image complies with any relevant licenses for all software contained within.
 
-### Modeling Examples
 These modeling examples are distributed under the Apache 2.0 license, (c) Copyright 2020 Gurobi Optimization, LLC
 
 https://github.com/Gurobi/modeling-examples
