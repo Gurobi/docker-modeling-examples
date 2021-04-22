@@ -112,7 +112,7 @@ If you want to implement security checks, it can be defined in the `cmd` part of
 
 
 
-## Via docker stack deploy or docker-compose
+## ... via docker stack deploy or docker-compose
 Example `docker-compose.yml` for a modeling example server:
 
 ```
@@ -140,6 +140,30 @@ services:
 ```
 
 Run `$ docker-compose up `
+
+A Jupiter Notebook instance will start, and you can open a browser at: 
+
+http://localhost:8888 
+
+Then you can interact with all the [modeling examples](https://github.com/Gurobi/modeling-examples).
+
+As this is intended to run as a training environment, security checks (Token and Password) are disabled.  
+
+## ... via Kubernetes deployment
+
+If you want to mount a specific license with Kubernetes, it can be done using a secret. This 
+is optional for the modeling examples as a limited license will be used if not provided.
+
+```
+kubectl create secret generic gurobi-lic --from-file="gurobi.lic=$PWD/gurobi.lic"
+```
+
+Then you can start a pod that will run the modelling examples in a container and expose it as a service. 
+A simple deployment file is provided as a [reference](https://github.com/Gurobi/docker-modeling-examples/blob/master/9.1.2/k8s.yaml).
+
+```
+kubectl apply -f k8s.yaml
+```
 
 A Jupiter Notebook instance will start, and you can open a browser at: 
 
