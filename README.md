@@ -48,13 +48,21 @@ This image comes with a `Limited License` that allows you to solve small optimiz
 To solve larger problems, you will need to get a license that works with your application
 running in Docker containers.  You have a few options:
 
+* The [Web License Service](https://www.gurobi.com/web-license-service/) (WLS) is a new Gurobi licensing service 
+  for containerized environments (Docker, Kubernetes...). Gurobi components can automatically request and renew license tokens to 
+  the WLS servers available in several regions worldwide. WLS only requires that your container has access to the 
+  Internet. Commercial users can request an evaluation and academic users can request a free license.
+  Please register to access the [Web License Manager](https://license.gurobi.com) and read the
+  [documentation](https://license.gurobi.com/manager/doc/overview)
+
 * A [Gurobi Compute Server](https://www.gurobi.com/products/gurobi-compute-server/) 
 allows you to seamlessly offload your optimization computations onto one or more dedicated 
 optimization servers grouped in a cluster. Users and applications can share the servers 
 thanks to advanced queuing and load balancing capabilities. Users can monitor jobs, and 
 administrators can manage the servers. The cluster manager provides additional features
-and security management. The Compute Server and the Cluster Manager must 
-be installed outside of the Docker cluster.
+and security management. The Compute Server, and the Cluster Manager can 
+be installed outside of the Docker cluster using a standard license, or within the Docker cluster
+with a WLS license.
 
 * The [Gurobi Cloud](https://www.gurobi.com/products/gurobi-instant-cloud/) is a simple and 
 cost-effective way to get up and running with powerful Gurobi optimization software running 
@@ -65,9 +73,8 @@ software and dedicated to you on Microsoft Azure® and Amazon Web Services®.
 runs on a dedicated machine outside of the Docker cluster. Client programs running in Docker containers can request
 tokens from the token server.
 
-* Please contact your sales representative at [sales@gurobi.com](mailto:sales@gurobi.com) to discuss additional options. 
-
-Note that other standard license types (NODE, Academic) do not work with Docker.
+Note that other standard license types (NODE, Academic) do not work with containers.
+Please contact your sales representative at [sales@gurobi.com](mailto:sales@gurobi.com) to discuss licensing options. 
 
 ## Using the client license
 
