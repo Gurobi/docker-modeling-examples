@@ -178,7 +178,7 @@ kubectl create secret generic gurobi-lic --from-file="gurobi.lic=$PWD/gurobi.lic
 ```
 
 Then you can start a pod that will run the modelling examples in a container and expose it as a service. 
-A simple deployment file is provided as a [reference](https://github.com/Gurobi/docker-modeling-examples/blob/master/9.1.2/k8s.yaml).
+A simple deployment file is provided as a [reference](https://github.com/Gurobi/docker-modeling-examples/blob/master/9.5.0/k8s.yaml).
 
 ```
 kubectl apply -f k8s.yaml
