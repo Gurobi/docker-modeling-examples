@@ -11,9 +11,9 @@ RUN git init \
     && git checkout -t origin/master -f \
     && rm -rf .git
 
-FROM python:3.7-slim
+FROM python:3.8
 
-ARG GRB_VERSION=9.1.2
+ARG GRB_VERSION=9.5.0
 
 RUN python -m pip install \
         notebook \
