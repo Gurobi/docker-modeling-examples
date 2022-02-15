@@ -1,0 +1,8 @@
+version: '3.7'
+services:
+  modeling-examples:
+    image: gurobi/modeling-examples:9.5.1
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./gurobi.lic:/opt/gurobi/gurobi.lic:ro
