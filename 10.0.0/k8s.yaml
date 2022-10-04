@@ -1,0 +1,55 @@
+# This file deploys Gurobi Modeling Examples
+#
+# 1- Create the license file as a secret (optional)
+#    kubectl create secret generic gurobi-lic --from-file="gurobi.lic=$PWD/gurobi.lic"
+#
+# 2- Deploy the Modeling Examples
+#    kubectl apply -f k8s.yaml
+#
+# 3- A Jupiter Notebook instance will start, and you can open a browser at:
+#    http://localhost:8888
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: gurobi-modeling-examples
+  name: gurobi-modeling-examples
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gurobi-modeling-examples
+  template:
+    metadata:
+      labels:
+        app: gurobi-modeling-examples
+    spec:
+      volumes:
+        - name: gurobi-lic
+          secret:
+            secretName: gurobi-lic
+            optional: true
+      containers:
+        - name: gurobi-modeling-examples
+          image: gurobi/modeling-examples:10.0.0beta
+          ports:
+            - containerPort: 8888
+          volumeMounts:
+            - name: gurobi-lic
+              mountPath: "/opt/gurobi"
+              readOnly: true
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gurobi-modeling-examples
+spec:
+  type: LoadBalancer
+  selector:
+    app: gurobi-modeling-examples
+  ports:
+    - port: 8888
+      targetPort: 8888
+
