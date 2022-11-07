@@ -32,7 +32,7 @@ spec:
             optional: true
       containers:
         - name: gurobi-modeling-examples
-          image: gurobi/modeling-examples:10.0.0beta
+          image: gurobi/modeling-examples:10.0.0
           ports:
             - containerPort: 8888
           volumeMounts:
