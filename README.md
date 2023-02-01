@@ -6,7 +6,8 @@ Where to get help: [Gurobi Support](https://www.gurobi.com/support/), [Gurobi Do
 
 # Supported tags and respective Dockerfile links
 
-* [10.0.0, latest](https://github.com/Gurobi/docker-modeling-examples/blob/master/10.0.0/Dockerfile)
+* [10.0.1, latest](https://github.com/Gurobi/docker-modeling-examples/blob/master/10.0.1/Dockerfile)
+* [10.0.0](https://github.com/Gurobi/docker-modeling-examples/blob/master/10.0.0/Dockerfile)
 * [9.5.2](https://github.com/Gurobi/docker-modeling-examples/blob/master/9.5.2/Dockerfile)
 * [9.5.1](https://github.com/Gurobi/docker-modeling-examples/blob/master/9.5.1/Dockerfile)
 * [9.5.0](https://github.com/Gurobi/docker-modeling-examples/blob/master/9.5.0/Dockerfile)
@@ -180,7 +181,7 @@ kubectl create secret generic gurobi-lic --from-file="gurobi.lic=$PWD/gurobi.lic
 ```
 
 Then you can start a pod that will run the modelling examples in a container and expose it as a service. 
-A simple deployment file is provided as a [reference](https://github.com/Gurobi/docker-modeling-examples/blob/master/10.0.0/k8s.yaml).
+A simple deployment file is provided as a [reference](https://github.com/Gurobi/docker-modeling-examples/blob/master/10.0.1/k8s.yaml).
 
 ```
 kubectl apply -f k8s.yaml
