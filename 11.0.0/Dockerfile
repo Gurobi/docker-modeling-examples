@@ -13,7 +13,7 @@ RUN git init \
 
 FROM python:3.10-slim-bullseye
 
-ARG GRB_VERSION=11.0.0b1
+ARG GRB_VERSION=11.0.0
 
 RUN python -m pip install \
         notebook \
