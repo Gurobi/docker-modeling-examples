@@ -20,7 +20,7 @@ RUN python -m pip install \
         matplotlib \
         numpy \
         pandas \
-        sklearn \
+        scikit-learn \
         folium \
         xlrd==1.2.0 \
     && python -m pip install gurobipy==${GRB_VERSION} \
