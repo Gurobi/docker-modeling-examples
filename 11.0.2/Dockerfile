@@ -15,6 +15,11 @@ FROM python:3.10-slim-bullseye
 
 ARG GRB_VERSION=11.0.2
 
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        gcc \
+        python3-dev \
+    && rm -rf /var/lib/apt/lists/*
+
 RUN python -m pip install \
         notebook \
         matplotlib \
