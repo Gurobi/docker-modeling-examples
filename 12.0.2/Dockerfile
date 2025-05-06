@@ -1,4 +1,4 @@
-FROM ubuntu:24.04 as buildexamples
+FROM ubuntu:24.04 AS buildexamples
 RUN apt-get update \
     && apt-get install -y git \
     && rm -rf /var/lib/apt/lists/* \
@@ -15,9 +15,10 @@ FROM python:3.10-slim-bullseye
 
 ARG GRB_VERSION=12.0.2
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install -y --no-install-recommends --fix-missing \
         gcc \
         python3-dev \
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 RUN python -m pip install \
