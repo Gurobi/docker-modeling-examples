@@ -11,7 +11,7 @@ RUN git init \
     && git checkout -t origin/master -f \
     && rm -rf .git
 
-FROM python:3.10-slim-bullseye
+FROM python:3.11-slim-bookworm
 
 ARG GRB_VERSION=12.0.2
 
