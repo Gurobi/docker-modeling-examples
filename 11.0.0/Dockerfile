@@ -1,4 +1,4 @@
-FROM ubuntu:20.04 as buildexamples
+FROM ubuntu:24.04 as buildexamples
 RUN apt-get update \
     && apt-get install -y git \
     && rm -rf /var/lib/apt/lists/* \
