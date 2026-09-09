@@ -61,7 +61,7 @@ common constraints types
 such as “allocation constraints”, “balance constraints”, “sequencing constraints”,
 “precedence constraints”, and others.
 
-The `gurobi/modeling-example` image includes a Jupyter Notebook that allows you
+The `gurobi/modeling-examples` image includes a Jupyter Notebook that allows you
 to browse and execute any of the Python modeling examples.
 
 ## Getting a Gurobi license
@@ -124,7 +124,7 @@ as some license files need to contain credentials in the form of API keys that s
 
 ## Using Docker
 
-The following command starts a modelling example server instance with
+The following command starts a modeling example server instance with
 the limited licenses installed by default.
 
 ```
@@ -140,7 +140,7 @@ $ docker run -p 8888:8888 \
              gurobi/modeling-examples
 ```
 
-A Jupiter Notebook instance will start, and you can open a browser at: 
+A Jupyter Notebook instance will start, and you can open a browser at: 
 
 http://localhost:8888
 
@@ -181,7 +181,7 @@ services:
 
 Run `$ docker-compose up `
 
-A Jupiter Notebook instance will start, and you can open a browser at: 
+A Jupyter Notebook instance will start, and you can open a browser at: 
 
 http://localhost:8888 
 
@@ -198,14 +198,14 @@ is optional for the modeling examples as a limited license will be used if not p
 kubectl create secret generic gurobi-lic --from-file="gurobi.lic=$PWD/gurobi.lic"
 ```
 
-Then you can start a pod that will run the modelling examples in a container and expose it as a service. 
+Then you can start a pod that will run the modeling examples in a container and expose it as a service. 
 A simple deployment file is provided as a [reference](https://github.com/Gurobi/docker-modeling-examples/blob/master/13.0.3/k8s.yaml).
 
 ```
 kubectl apply -f k8s.yaml
 ```
 
-A Jupiter Notebook instance will start, and you can open a browser at: 
+A Jupyter Notebook instance will start, and you can open a browser at: 
 
 http://localhost:8888 
 
