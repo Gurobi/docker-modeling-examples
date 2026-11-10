@@ -13,7 +13,7 @@ RUN git init \
 
 FROM python:3.11-slim-bookworm
 
-ARG GRB_VERSION=14.0.0b1
+ARG GRB_VERSION=14.0.0
 
 RUN apt-get update && apt-get install -y --no-install-recommends --fix-missing \
         gcc \
